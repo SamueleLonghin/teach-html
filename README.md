@@ -8,4 +8,4 @@
  Nel caso il server non parta:
  * Aprire un terminale all'interno di codespace
  * Eseguire il comando `php -S 0.0.0.0:4000`
- * Andare nella sezione **porte** e cliccare sulla 400
+ * Andare nella sezione **porte** e cliccare sulla 4000
