@@ -48,7 +48,7 @@ function displayMarkdownContent(content) {
     chapterList.innerHTML = '';
     container.querySelectorAll('h1, h2, h3').forEach((header, index) => {
         const chapterLink = document.createElement('div');
-        chapterLink.classList.add('chapter-link', header.tagName.toLowerCase());
+        chapterLink.classList.add('chapter-link', 'header-'+header.tagName.toLowerCase());
         chapterLink.textContent = header.textContent;
         chapterLink.addEventListener('click', () => {
             header.scrollIntoView({ behavior: 'smooth' });
