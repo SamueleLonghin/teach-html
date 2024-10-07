@@ -7,6 +7,7 @@ for (const [label, path] of Object.entries(filesDict)) {
     link.dataset.path = path;
     link.addEventListener('click', function () {
         window.history.pushState({}, '', `#${encodeURIComponent(label)}`);
+        document.title = label
         fetchMarkdownFile(path);
         if (window.innerWidth <= 768) {
             toggleSidebar();
@@ -104,7 +105,7 @@ function displayMarkdownContent(content) {
 
 // Gestisce la navigazione tra i file utilizzando l'URL
 window.addEventListener('popstate', function () {
-    const hash = window.location.hash.substring(1);
+    const hash = decodeURIComponent(window.location.hash.substring(1));
     if (filesDict[hash]) {
         fetchMarkdownFile(filesDict[hash]);
     }
@@ -114,10 +115,13 @@ window.addEventListener('popstate', function () {
 window.addEventListener('load', function () {
     const hash = decodeURIComponent(window.location.hash.substring(1));
     if (filesDict[hash]) {
+        document.title = hash
         fetchMarkdownFile(filesDict[hash]);
     }
-    else{
-        fetchMarkdownFile(filesDict[Object.keys(filesDict)])
+    else {
+        label = Object.keys(filesDict)[0]
+        document.title = label
+        fetchMarkdownFile(filesDict[label])
     }
 });
 
