@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.5">
+        <title>Dispensa HTML</title>
+        <link rel="stylesheet" href="prism.css">
+       <link rel="stylesheet" href="site.css">
+    </head>
+
+    <body>
+        <button id="sidebar-toggle">☰</button>
+        <div id="sidebar">
+            <h2>Documenti</h2>
+            <div id="fileList"></div>
+            <h3>Capitoli</h3>
+            <div id="chapterList"></div>
+        </div>
+        <div id="content">
+            <div id="output"></div>
+        </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/14.1.2/marked.min.js"
+            integrity="sha512-bXyBT2/sYjZg1D7ykDS6eJSE4DFDVPJHvbRAfdfYKr6IusrCz7wAmSm36vz9G8zMob25Rvqu90vft3JI71ygcQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="prism.css" />
+        <script>
+            // Dizionario dei file markdown con etichetta e percorso
+            const filesDict = {
+                'Dispensa HTML': 'risorse/html.md',
+                'Dispensa CSS': 'risorse/css.md',
+                'Routing delle Risorse': 'risorse/routing.md'
+            };
+            preview = true;
+            language = 'language-html'
+
+        </script>
+        <script src="script.js"> </script>
+    </body>
+
+</html>
